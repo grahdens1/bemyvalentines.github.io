@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .button:hover {
+            background: #e63950;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <button class="button" onclick="acceptValentine('Yay! 🎁❤️ See you on the 14th!')">Yes!</button>
+        <button class="button" onclick="acceptValentine('Yes, but only if you promise to make me feel like the luckiest person alive! 😘🌹')">Yes!</button>
+        <p id="response"></p>
+        <div id="next-options" style="display: none;">
+            <button class="button" onclick="nextQuestion('Tell me, what’s one thing I can do to make our date unforgettable? 😉')">Let's Turn Up the Heat! 🔥</button>
+            <button class="button" onclick="nextQuestion('What's one thing you've been wanting me to do just for you? 😏')">Your Secret Desire 💕</button>
+        </div>
+        <p id="follow-up"></p>
+    </div>
+    <script>
+        function acceptValentine(message) {
+            document.getElementById("response").textContent = message;
+            document.getElementById("next-options").style.display = "block";
+        }
+        function nextQuestion(message) {
+            document.getElementById("follow-up").textContent = message;
+        }
+    </script>
+</body>
+</html>
